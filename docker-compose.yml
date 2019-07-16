@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: ${DATABASE_CONTAINER_NAME}
+    restart: unless-stopped
+
+  mongodb_seed:
+    build: ./seed
+    container_name: ${SEED_CONTAINER_NAME}
+    depends_on:
+      - mongodb
+
+  webapi:
+    build: .
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    ports:
+      - ${PORT}:${PORT}

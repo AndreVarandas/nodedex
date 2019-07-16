@@ -1,0 +1,38 @@
+# The purpose of this file is to seed the mongo database with pokemon data.
+
+# This process is splited in two parts: 
+# Part one is the itermediate container, which gets a fresh clone of the pokemon.json 
+# repository, so we don't ever have to touch or update it manually.
+# Part two is the seed container itself, it's a ephemeral mongodb container that is used only
+# to import data into the "definitive" database (DATABASE_CONTAINER_NAME).
+
+# Choose and name our temporary image, to hold the pokemon.json
+# Repository, to be imported into the mongodb later.
+FROM alpine as intermediate
+# Add metadata identifying these image as our build container
+LABEL stage=intermediate
+
+# Install dependencies required to git clone.
+RUN apk update && \
+    apk add --update git
+
+# Clone the pokemon.json repository
+RUN git clone https://github.com/fanzeyi/pokemon.json.git pokedex
+
+# Setup the seed container - This is the ephemeral mongodb container
+# It is used to import the pokedex collections into the "definitive" container.
+FROM mongo
+
+# Define required environment variables
+ENV DATABASE_CONTAINER_NAME=nodedex_db
+ENV DATABASE_NAME=pokedex
+
+# Change workdirectory, copy the cloned repository into /pokedex
+WORKDIR /pokedex
+COPY --from=intermediate /pokedex .
+
+# Import collections into the "definitive" container
+CMD mongoimport --host ${DATABASE_CONTAINER_NAME} --db ${DATABASE_NAME} --collection pokemons --type json --file pokedex.json --jsonArray --drop && \
+ mongoimport --host ${DATABASE_CONTAINER_NAME} --db ${DATABASE_NAME} --collection items --type json --file items.json --jsonArray --drop && \
+ mongoimport --host ${DATABASE_CONTAINER_NAME} --db ${DATABASE_NAME} --collection skills --type json --file skills.json --jsonArray --drop && \
+ mongoimport --host ${DATABASE_CONTAINER_NAME} --db ${DATABASE_NAME} --collection types --type json --file types.json --jsonArray --drop

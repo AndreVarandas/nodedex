@@ -1,0 +1,11 @@
+# Seed
+seed/data
+
+# modules
+node_modules
+
+# ENV
+.env
+
+# OSX
+.DS_Store

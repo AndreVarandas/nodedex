@@ -1,0 +1,46 @@
+{
+  "name": "nodedex",
+  "version": "1.0.0",
+  "description": "A simple nodejs Pokedex",
+  "main": "src/index.js",
+  "keywords": [
+    "pokedex",
+    "nodedex"
+  ],
+  "author": "André Varandas <andre.m.varandas@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "commit": "npx git-cz",
+    "format": "prettier --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "start": "node src/index.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "helmet": "^3.18.0",
+    "memory-cache": "^0.2.0",
+    "mongodb": "^3.2.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
