@@ -24,15 +24,18 @@ This project, is a simple express application with a mongodb database. The datab
 *Data*
 
 - [http://localhost:8080/api/v1/pokemons](http://localhost:8080/api/v1/pokemons) - Lists all the pokemons.
-- [http://localhost:8080/api/v1/pokemons](http://localhost:8080/api/v1/skills) - All skills.
-- [http://localhost:8080/api/v1/pokemons](http://localhost:8080/api/v1/items) - All items.
-- [http://localhost:8080/api/v1/pokemons](http://localhost:8080/api/v1/types) - Lists types.
+- [http://localhost:8080/api/v1/skills](http://localhost:8080/api/v1/skills) - All skills.
+- [http://localhost:8080/api/v1/items](http://localhost:8080/api/v1/items) - All items.
+- [http://localhost:8080/api/v1/types](http://localhost:8080/api/v1/types) - Lists types.
 
 *Media*
 
 - [http://localhost:8080/api/v1/static/images/](http://localhost:8080/api/v1/static/images/) - Base endpoint for images. You must also provide the full image path. Eg: `http://localhost:8080/api/v1/static/images/001Bulbasaur.png`.
 - [http://localhost:8080/api/v1/static/thumbnails/](http://localhost:8080/api/v1/static/thumbnails/) - Base endpoint for thumbnails. You must also provide the full thumbnails path. Eg: `http://localhost:8080/api/v1/static/sprites/001Bulbasaur.png`.
 - [http://localhost:8080/api/v1/static/sprites/](http://localhost:8080/api/v1/static/sprites/) - Base endpoint for sprites. You must also provide the full sprite path. Eg: `http://localhost:8080/api/v1/static/sprites/001MS.png`.
+
+## LICENSE
+[MIT - André Varandas](LICENSE)
 
 ## Copyright Notice
 
