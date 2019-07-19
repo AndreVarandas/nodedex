@@ -3,9 +3,7 @@ A simple NodeJS Pokemon API.
 
 ## Why?
 
-Github user [fanzeyi](https://github.com/fanzeyi) created a nice repository, containing all data about pokemon in JSON files - [https://github.com/fanzeyi/pokemon.json](https://github.com/fanzeyi/pokemon.json).
-
-I needed a pokedex API, so I made this one, using the data provided by [fanzeyi](https://github.com/fanzeyi).
+I needed a simple pokedex API to play around so I made this one using the data provided in this repository [https://github.com/fanzeyi/pokemon.json](https://github.com/fanzeyi/pokemon.json), collected from [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Main_Page).
 
 This project, is a simple express application with a mongodb database. The database will hold the data, the json files, and express provides the corresponding routes.
 
@@ -111,10 +109,13 @@ You can start it with:
 
 `docker-compose -f docker-compose.yml -f  docker-compose.dev.yml up -d`
 
-## LICENSE
-[MIT - André Varandas](LICENSE)
-
 ## Copyright Notice
 
-Please note everything in repository are copyrighted by the Pokémon Company and its affiliates.
-This repository is merely a compilation of data collected by the editors of [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Main_Page).
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/2.5/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Generic License</a>.
+
+[https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)
+
+## Disclaimers
+Pokémon © 2002-2019 Pokémon. © 1995-2019 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.
+
+No copyright or trademark infringement is intended in using Pokémon content in this repository.
