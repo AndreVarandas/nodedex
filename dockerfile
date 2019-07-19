@@ -25,5 +25,4 @@ COPY --from=intermediate /pokedex/sprites public/sprites
 
 RUN npm install --prod
 
-# EXPOSE 3000
 CMD ["node", "src/index.js"]

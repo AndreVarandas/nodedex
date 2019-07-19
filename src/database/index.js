@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient
 
 /**
- * Connects the mongoclient to the database and returns an
+ * Connects the mongo client to the database and returns an
  * object that is useful to manage connections and collections.
  *
  * @returns {object}
@@ -20,7 +20,7 @@ const getDatabase = async () => {
 
 /**
  * Performs find on any given collection name,
- * and reurns any found documents.
+ * and returns any found documents.
  *
  * @param {*} collectionName
  * @param {*} callback

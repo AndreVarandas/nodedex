@@ -3,11 +3,11 @@ A simple NodeJS Pokemon API
 
 ## Why?
 
-Github user [fanzeyi](https://github.com/fanzeyi) created a nice repository, a pokedex, all data about pokemon in JSON files - [https://github.com/fanzeyi/pokemon.json](https://github.com/fanzeyi/pokemon.json).
+Github user [fanzeyi](https://github.com/fanzeyi) created a nice repository, containing all data about pokemon in JSON files - [https://github.com/fanzeyi/pokemon.json](https://github.com/fanzeyi/pokemon.json).
 
 I needed a pokedex API, so I made this one, using the data provided by [fanzeyi](https://github.com/fanzeyi).
 
-This project, is a simple express application with a mongodb database. The database will hold the data as in the json files and express provides the corresponding routes.
+This project, is a simple express application with a mongodb database. The database will hold the data, the json files, and express provides the corresponding routes.
 
 ## Requirements
 
@@ -30,9 +30,18 @@ This project, is a simple express application with a mongodb database. The datab
 
 *Media*
 
-- [http://localhost:8080/api/v1/static/images/](http://localhost:8080/api/v1/static/images/) - Base endpoint for images. You must also provide the full image path. Eg: `http://localhost:8080/api/v1/static/images/001Bulbasaur.png`.
-- [http://localhost:8080/api/v1/static/thumbnails/](http://localhost:8080/api/v1/static/thumbnails/) - Base endpoint for thumbnails. You must also provide the full thumbnails path. Eg: `http://localhost:8080/api/v1/static/sprites/001Bulbasaur.png`.
-- [http://localhost:8080/api/v1/static/sprites/](http://localhost:8080/api/v1/static/sprites/) - Base endpoint for sprites. You must also provide the full sprite path. Eg: `http://localhost:8080/api/v1/static/sprites/001MS.png`.
+- [http://localhost:8080/api/v1/static/images/](http://localhost:8080/api/v1/static/images/) - Base endpoint for images. You should append the pokemon number and name in the following format: `http://localhost:8080/api/v1/static/images/001Bulbasaur.png`.
+- [http://localhost:8080/api/v1/static/thumbnails/](http://localhost:8080/api/v1/static/thumbnails/) - Base endpoint for thumbnails. You should also append the pokemon number and name in the following format: `http://localhost:8080/api/v1/static/sprites/001Bulbasaur.png`.
+- [http://localhost:8080/api/v1/static/sprites/](http://localhost:8080/api/v1/static/sprites/) - Base endpoint for sprites. For sprites use pokemon number plus MS to get the full image url, like: `http://localhost:8080/api/v1/static/sprites/001MS.png`.
+
+## Developing
+
+If you want to make any changes, a [docker-compose.dev.yml](docker-compose.dev.yml) basic file is provided, so you
+can attach chrome inspector to the docker container.
+
+You can start it with:
+
+`docker-compose -f docker-compose.yml -f  docker-compose.dev.yml up -d`
 
 ## LICENSE
 [MIT - André Varandas](LICENSE)

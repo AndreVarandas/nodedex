@@ -4,6 +4,9 @@ seed/data
 # modules
 node_modules
 
+# Editor
+.idea
+
 # ENV
 .env
 
