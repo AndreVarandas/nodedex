@@ -1,5 +1,5 @@
 # Nodedex
-A simple NodeJS Pokemon API
+A simple NodeJS Pokemon API.
 
 ## Why?
 
@@ -27,6 +27,74 @@ This project, is a simple express application with a mongodb database. The datab
 - [http://localhost:8080/api/v1/skills](http://localhost:8080/api/v1/skills) - All skills.
 - [http://localhost:8080/api/v1/items](http://localhost:8080/api/v1/items) - All items.
 - [http://localhost:8080/api/v1/types](http://localhost:8080/api/v1/types) - Lists types.
+
+**Pokemons sample:**
+
+```json
+[{
+    "_id": "5d317dc803514cb6d7ec78f5",
+    "id": 2,
+    "name": {
+    "english": "Ivysaur",
+    "japanese": "フシギソウ",
+    "chinese": "妙蛙草"
+},
+    "type": [
+        "Grass",
+        "Poison"
+    ],
+    "base": {
+        "HP": 60,
+        "Attack": 62,
+        "Defense": 63,
+        "Sp. Attack": 80,
+        "Sp. Defense": 80,
+        "Speed": 60
+    }
+}]
+```
+
+**Skills sample:**
+
+```json
+[{
+  "_id": "5d317dc803514cb6d7ec7fa9",
+  "accuracy": 100,
+  "category": "物理",
+  "cname": "手刀",
+  "ename": "Karate Chop",
+  "id": 2,
+  "jname": "からてチョップ",
+  "power": 50,
+  "pp": 25,
+  "type": "Fighting"
+}]
+```
+
+**Items sample:**
+
+```json
+[{
+    "_id": "5d317dc803514cb6d7ec7c23",
+    "name": {
+        "japanese": "マスターボール",
+        "english": "Master Ball",
+        "chinese": "大师球"
+    },
+    "id": 1
+}]
+```
+
+**Types sample:**
+
+```json
+[{
+    "_id": "5d317dc803514cb6d7ec8212",
+    "english": "Normal",
+    "chinese": "一般",
+    "japanese": "ノーマル"
+}]
+```
 
 *Media*
 
